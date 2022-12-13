@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { MainHeader } from './style';
-
 import { theme } from 'components/Layout/theme';
-// import { logo } from 'assets/images/logo.png';
+
+import Logo from 'assets/images/logo.png';
 
 export default function Header() {
 
   return (
 
     <MainHeader theme={theme}>
-      <img src="" alt="Logo da empresa Bonfim Contabilidade" />
+      <img src={ Logo } alt="Logo da empresa Bonfim Contabilidade" />
       <nav>
         <ul>
           <li><Link to='/'>Home</Link></li>

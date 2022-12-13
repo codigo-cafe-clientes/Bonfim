@@ -12,8 +12,8 @@ export default function Layout() {
       <MainContainer theme={theme}>
         <Header />
         <Outlet />
-        <Footer />
       </MainContainer>
+      <Footer />
     </>
   );
 }

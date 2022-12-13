@@ -4,10 +4,16 @@ export const MainHeader = styled.header`
   width: 100%;
   padding: 0px;
   margin: 20px 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(200px, 400px) 1fr;
   align-items: center;
-  justify-content: space-between;
+  gap: 0 30px;
 
+  img {
+    max-width: 170px;
+    width: 100%;
+  }
+  
   nav {
     margin: 0;
     padding: 0;
@@ -17,6 +23,7 @@ export const MainHeader = styled.header`
       display: flex;
       margin: 0;
       padding: 0;
+      justify-content: space-around;
       align-items: center;
 
       li {
