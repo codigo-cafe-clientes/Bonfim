@@ -1,7 +1,7 @@
 export const theme = {
   'main': {
     'fontSize'    : 16,
-    'fontSmall'   : 10,
+    'fontSmall'   : 12,
     'fontFamily'  : 'Open Sans',
     'headingOne'  : 60,
     'headingTwo'  : 30,

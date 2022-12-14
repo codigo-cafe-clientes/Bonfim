@@ -3,6 +3,9 @@ import { MainFooter } from "./style";
 import { theme } from 'components/Layout/theme';
 
 import Logo  from 'assets/images/logo-branco.png';
+import Linkedin  from 'assets/images/icon-linkedin.png';
+import Instagram  from 'assets/images/icon-instagram.png';
+import Facebook  from 'assets/images/icon-facebook.png';
 
 export default function Footer() {
   return (
@@ -10,9 +13,11 @@ export default function Footer() {
       <section>
         <div>
           <img src={ Logo } alt="Logo branco Bonfim Contabilidade"/>
-          <p>(019) 3395-0305</p>
-          <p>Rua Dr. Quirino, 388 - Centro</p>
-          <p>Campinas / SP</p>
+          <div>
+            <p>(019) 3395-0305</p>
+            <p>Rua Dr. Quirino, 388 - Centro</p>
+            <p>Campinas / SP</p>
+          </div>
         </div>
         <nav>
           <ul>
@@ -41,11 +46,16 @@ export default function Footer() {
         <nav>
           <ul>
             <li><h3>Siga-nos</h3></li>
+            <li>
+              <a href="#"><img src={ Linkedin } alt="Linkedin"/></a>
+              <a href="#"><img src={ Instagram } alt="Instragram"/></a>
+              <a href="#"><img src={ Facebook } alt="Facebook"/></a>
+            </li>
           </ul>
         </nav>
       </section>
       <section>
-        <p>todos os direitos reservados</p>
+        <p>&copy; 2022 - Todos os direitos reservados | desenvolvido por <a href="https://codigo.cafe" target="_blank">Código Café</a>.</p>
       </section>
     </MainFooter>
   );
