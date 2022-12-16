@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const MainHeader = styled.header`
+  max-width: ${ props => props.theme.main.maxWidth }px;
   width: 100%;
   padding: 0px;
-  margin: 20px 0;
+  margin: 20px auto;
   display: grid;
   grid-template-columns: minmax(200px, 400px) 1fr;
   align-items: center;

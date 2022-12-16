@@ -1,9 +1,9 @@
-export default function Home() {
+import HomeSobre from "view/Home/Sobre";
 
+export default function Home() {
   return (
     <>
-      <h1>Página Inicial</h1>
+      <HomeSobre />
     </>
   );
-
 }
