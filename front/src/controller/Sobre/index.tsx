@@ -50,11 +50,13 @@ export default function Sobre() {
                 profissional.
             </p>
           </div>
-          <div></div>
-          <h2>Visão</h2>
-          <p>Ser referência em prestação de serviços de contabilidade e consultoria
-             empresarial.
-          </p>
+
+          <div>
+            <h2>Visão</h2>
+            <p>Ser referência em prestação de serviços de contabilidade e consultoria
+              empresarial.
+            </p>  
+          </div>
           <div>
             <h2>Valores</h2>
             <p>Respeito às pessoas, aos colaboradores e à sociedade em qualquer situação.
@@ -66,7 +68,10 @@ export default function Sobre() {
           </div>
         </section>       
       
-        <span>algum de fotos</span>  
+        <section>
+        <span>album de fotos será aqui</span>
+        </section>
+
         
         
         <section>
