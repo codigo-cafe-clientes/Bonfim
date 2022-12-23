@@ -9,6 +9,8 @@ export const theme = {
     'colorBlack'  : '#3D3C3C',
     'colorBlue'   : '#4273B2',
     'colorOrange' : '#E5803E',
+    'colorGrey'   : '#3D3C3C',
+
     'maxWidth'    : '1170'
   }
 };
