@@ -79,8 +79,7 @@ export const ContatoSection = styled.section`
         cursor: pointer;
         
         margin-right: auto;
-        margin-left: auto;
-        
+        margin-left: auto;        
     }
     
     button:last-child {
