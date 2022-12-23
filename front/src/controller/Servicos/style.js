@@ -45,9 +45,6 @@ button {
     margin-top: 40px;    
 }
 
-
-
-
 section {
     
     div {

@@ -1,7 +1,7 @@
 import {ServicosSection} from './style';
 
-import hero from 'assets/images/banner-top.png'
-import contact from 'assets/images/banner-contact.png'
+import hero from 'assets/images/banner-top.png';
+import contact from 'assets/images/banner-contact.png';
 
 import { theme } from 'components/Layout/theme';
 
