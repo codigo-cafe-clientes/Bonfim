@@ -1,7 +1,7 @@
 import { SobreSection } from './style';
 
 import logo from 'assets/images/logo.png'
-import hero from 'assets/images/banner-historia.png'
+import hero from 'assets/images/banner-top.png'
 import desk from 'assets/images/photo-desk.png'
 import contact from 'assets/images/banner-contact.png'
 
