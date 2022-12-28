@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
-export const HeroDiv = styled.div`
+export const HeroSection = styled.section`
   width: 100%;
   height: 300px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background-image: url(${props => props.img});
-  h1 {
-    font-size: ${ props => props.theme.main.headingOne }px;
+  div {
+    max-width: ${ props => props.theme.main.maxWidth }px;
+    width: 100%;
+    h1 {
+      font-size: ${ props => props.theme.main.headingOne }px;
+    }
   }
 `;

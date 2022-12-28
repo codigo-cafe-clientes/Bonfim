@@ -1,10 +1,17 @@
-import { HeroDiv } from "./style";
+import { HeroSection } from "./style";
 import { theme } from 'components/Layout/theme.js';
 
-export default function Hero( props:any ) {
+interface Props {
+  'title' : string | undefined,
+  'background' : string | undefined
+}
+
+export default function Hero( { title, background }:Props ) {
   return (
-    <HeroDiv theme={theme} img={props.data.img} >
-      <h1>{props.data.title}</h1>
-    </HeroDiv>
+    <HeroSection theme={theme} img={background} >
+      <div>
+        <h1>{title}</h1>
+      </div>
+    </HeroSection>
   );
 }

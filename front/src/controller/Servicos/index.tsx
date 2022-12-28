@@ -1,20 +1,21 @@
-import Hero from "components/Hero";
 import ServicoConteudoDireito from "view/Servico/ConteudoDireito";
 import ServicoConteudoEsquerdo from "view/Servico/ConteudoEsquerdo";
-
-import  HeroImg from 'assets/images/banner-default.png';
 import CtaContact from "components/CtaContact";
 
-export default function Servicos() {
+import HeroImage from 'assets/images/banner-default.png';
 
-  const data_hero = {
-    'title' : 'Serviços',
-    'img' : HeroImg
-  };
+interface Props {
+  setTitle : React.Dispatch<React.SetStateAction<string | undefined>>,
+  setBackground : React.Dispatch<React.SetStateAction<string | undefined>>
+}
+
+export default function Servicos( { setTitle, setBackground }:Props ) {
+
+  setTitle( 'Serviços' );
+  setBackground( HeroImage );
 
   return (
     <>
-      <Hero data={data_hero} />
       <ServicoConteudoDireito />
       <ServicoConteudoEsquerdo />
       <ServicoConteudoDireito />

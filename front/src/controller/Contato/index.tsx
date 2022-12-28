@@ -2,19 +2,20 @@ import ContatoFormulario from "view/Contato/Formulario";
 import ContatoMapa from "view/Contato/Mapa";
 import { ContatoMain } from "view/Contato/style";
 
-import  HeroImg from 'assets/images/banner-default.png';
-import Hero from "components/Hero";
+import  HeroImage from 'assets/images/banner-default.png';
 
-export default function Contato() {
+interface Props {
+  setTitle : React.Dispatch<React.SetStateAction<string | undefined>>,
+  setBackground : React.Dispatch<React.SetStateAction<string | undefined>>
+}
 
-  const data_hero = {
-    'title' : 'Contato',
-    'img' : HeroImg
-  }
+export default function Contato( { setTitle, setBackground }:Props ) {
+
+  setTitle( 'Contato' );
+  setBackground( HeroImage );
 
   return (
     <>
-      <Hero data={data_hero} />
       <ContatoMain>
         <ContatoMapa />
         <ContatoFormulario />      
