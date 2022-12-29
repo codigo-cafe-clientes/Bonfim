@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@types/glidejs__glide": "^3.6.1",
     "react-router-dom": "^6.4.5",
     "sass": "^1.55.0",
     "styled-components": "^5.3.6",
