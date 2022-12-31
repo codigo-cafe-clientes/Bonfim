@@ -3,13 +3,11 @@ import SobreConteudoPrincipal from "view/Sobre/ConteudoPrincipal";
 import SobreMvv from "view/Sobre/Mvv";
 import CtaContact from "components/CtaContact";
 import SobreConteudo from "view/Sobre/Conteudo";
-
+import { mFoto } from "model/Sobre";
 import HeroImage from 'assets/images/banner-default.png';
-import Sobre01 from 'assets/images/sobre01.jpg';
-import Sobre02 from 'assets/images/sobre02.jpg';
-import Sobre03 from 'assets/images/sobre03.jpg';
-import Sobre04 from 'assets/images/sobre04.jpg';
-import Sobre05 from 'assets/images/sobre05.jpg';
+import { GlideJS, GlideJSItem } from "components/Glide";
+import { iFoto } from "interfaces/interfaceSobre";
+
 
 interface Props {
   setTitle : React.Dispatch<React.SetStateAction<string | undefined>>,
@@ -20,7 +18,6 @@ export default function Sobre( { setTitle, setBackground }:Props ) {
 
   setTitle( 'Conheça nossa história' );
   setBackground( HeroImage );
-  const imagens = [ Sobre01, Sobre02, Sobre03, Sobre04, Sobre05 ];
 
   return (
     <>
@@ -28,7 +25,18 @@ export default function Sobre( { setTitle, setBackground }:Props ) {
       <SobreConteudoPrincipal />
       <SobreMvv />
 
-
+      <GlideJS
+        id="fotos"
+        arrows={true}
+        Type={"carousel"}
+        StartAt={0}
+        PerView={4}
+        Bound={true}
+      >
+        { mFoto().map((item:iFoto, index:number ) => (
+          <GlideJSItem id={index} name={item.name} image={item.image} />
+        ))}
+      </GlideJS>
 
       <SobreConteudo />
       <SobreConteudo />
