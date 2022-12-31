@@ -3,7 +3,6 @@ import SobreConteudoPrincipal from "view/Sobre/ConteudoPrincipal";
 import SobreMvv from "view/Sobre/Mvv";
 import CtaContact from "components/CtaContact";
 import SobreConteudo from "view/Sobre/Conteudo";
-import GlideJS from "components/Glide";
 
 import HeroImage from 'assets/images/banner-default.png';
 import Sobre01 from 'assets/images/sobre01.jpg';
@@ -28,15 +27,9 @@ export default function Sobre( { setTitle, setBackground }:Props ) {
       <SobreLogo />
       <SobreConteudoPrincipal />
       <SobreMvv />
-      <GlideJS 
-        images={imagens}
-        id={'sobre'}
-        bullets={true}
-        Type={'carousel'}
-        PerView={4}
-        StartAt={1}
-        Bound={true}
-      />
+
+
+
       <SobreConteudo />
       <SobreConteudo />
       <SobreConteudo />

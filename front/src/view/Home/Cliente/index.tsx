@@ -1,27 +1,22 @@
 import { HomeClienteSection } from './style';
-import GlideJS from 'components/Glide';
+import {iCliente} from "interfaces/interfaceHome";
+import {GlideJS, GlideJSItem} from "components/Glide";
 
-import logo01 from "assets/images/logo-01.png";
-import logo02 from "assets/images/logo-02.png";
-import logo03 from "assets/images/logo-03.png";
-import logo04 from "assets/images/logo-04.png";
-import logo05 from "assets/images/logo-05.png";
-
-export default function HomeCliente() {
-
-  const imagens = [ logo01, logo02, logo03, logo04, logo05 ];
-
+export default function HomeCliente( props:any ) {
   return (
     <HomeClienteSection>
-      <GlideJS 
+      <GlideJS
+        id={"cliente"}
         arrows={true}
-        images={imagens} 
-        id={'cliente'}
-        Type={'carousel'}
-        StartAt={1}
+        Type={"carousel"}
+        StartAt={0}
         PerView={4}
         Bound={true}
-      />
+      >
+        { props.data.map(( item:iCliente, index:number )=>(
+          <GlideJSItem id={index} name={item.name} image={item.image} />
+        )) }
+      </GlideJS>
     </HomeClienteSection>
   );
 }

@@ -1,0 +1,27 @@
+[
+  {
+    "id" : 1,
+    "name" : "Cliente 01",
+    "image" : "/assets/images/logo-01.png"
+  },
+  {
+    "id" : 2,
+    "name" : "Cliente 02",
+    "image" : "/assets/images/logo-02.png"
+  },
+  {
+    "id" : 3,
+    "name" : "Cliente 03",
+    "image" : "/assets/images/logo-03.png"
+  },
+  {
+    "id" : 4,
+    "name" : "Cliente 04",
+    "image" : "/assets/images/logo-04.png"
+  },
+  {
+    "id" : 5,
+    "name" : "Cliente 05",
+    "image" : "/assets/images/logo-05.png"
+  }
+]

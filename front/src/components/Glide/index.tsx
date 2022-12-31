@@ -1,46 +1,13 @@
-import glidecss from './Glide.module.scss';
-import { Arrows, Bullets, Controls } from './Components';
-
-import Glide from '@glidejs/glide';
 import { useEffect } from 'react';
+import Glide from '@glidejs/glide';
+import { Arrows, Bullets, Controls } from './Components';
+import { iGlideJS } from "interfaces/interfaceGlide";
+import {iCliente} from "interfaces/interfaceHome";
+import glidecss from './Glide.module.scss';
 
-interface iGlideJS {
-  images : string[],
-  id : string,
-  controls ?: boolean,
-  arrows ?: boolean,
-  bullets ?: boolean,
-  Type ?: "slider" | "carousel",
-  StartAt ?: number,
-  PerView ?: number,
-  FocusAt ?: number,
-  Gap ?: number,
-  Autoplay ?: number | false | undefined,
-  Hoverpause ?: boolean,
-  Keyboard ?: boolean,
-  Bound ?: boolean,
-  SwipeThreshold ?: number | boolean,
-  DragThreshold ?: number | boolean,
-  PerTouch ?: number | boolean,
-  TouchRatio ?: number,
-  TouchAngle ?: number,
-  AnimationDuration ?: number,
-  Rewind ?: boolean,
-  RewindDuration ?: number,
-  AnimationTimingFunc ?: string,
-  Direction ?: string,
-  Peek ?: number | Object,
-  Breakpoints ?: Object,
-  Classes ?: Object,
-  Throttle ?: number
-}
 
-export default function GlideJS( {...data}:iGlideJS ) {
-
-  const { arrows, bullets, controls, images, id } = data;
-  const { Type, StartAt, PerView, Autoplay, Bound } = data;
-  const quantity =  Number( images.length );
- 
+export function GlideJS( {...data}:iGlideJS ) {
+  const { children, id, arrows, bullets, controls, quantity, Type, StartAt, PerView, Autoplay, Bound } = data;
   const Slider = new Glide( '#'+id );
   useEffect(() => {
     Slider.update({ type : Type });
@@ -55,16 +22,18 @@ export default function GlideJS( {...data}:iGlideJS ) {
     <div id={id} className={glidecss.glide}>
       <div className={glidecss.glide__track} data-glide-el="track" >
         <ul className={glidecss.glide__slides}>
-          {images.map((image, index) => (
-            <li key={index} className={glidecss.glide__slide}><img src={image}/></li>
-          ))}
+          {children}
         </ul>
       </div>
-
       { ( !!controls ) ? <Controls /> : '' }
       { ( !!arrows ) ? <Arrows /> : '' }
       { ( !!bullets ) ? <Bullets qnt={quantity} /> : '' }
-
     </div>
+  );
+}
+
+export function GlideJSItem( { id, name, image }:iCliente ) {
+  return (
+    <li className={glidecss.glide__slide} key={id}><img src={image} alt={name}/></li>
   );
 }

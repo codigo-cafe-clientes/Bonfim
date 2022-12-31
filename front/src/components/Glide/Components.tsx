@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import glidecss from './Glide.module.scss';
 
 interface Quantidade {
-  qnt : number
+  qnt ?: number
 }
 
 export function Arrows() {
@@ -22,8 +22,10 @@ export function Arrows() {
 
 export function Bullets( { qnt }:Quantidade ) {
   const bullets = [];
-  for( let i = 1; i <= qnt; i++ ) {
-    bullets.push(<button key={i} className={glidecss.glide__bullet} data-glide-dir={'=' + i}></button>);
+  if( !!qnt ) {
+    for (let i = 1; i <= qnt; i++) {
+      bullets.push(<button key={i} className={glidecss.glide__bullet} data-glide-dir={'=' + i}></button>);
+    }
   }
   return (
     <div className={glidecss.glide__bullets} data-glide-el="controls[nav]">
