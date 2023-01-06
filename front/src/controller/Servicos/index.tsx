@@ -2,6 +2,10 @@ import ServicoConteudoDireito from "view/Servico/ConteudoDireito";
 import ServicoConteudoEsquerdo from "view/Servico/ConteudoEsquerdo";
 import CtaContact from "components/CtaContact";
 
+import { ServicoSection } from "./style"
+
+
+
 import HeroImage from 'assets/images/banner-default.png';
 
 interface Props {
@@ -15,13 +19,13 @@ export default function Servicos( { setTitle, setBackground }:Props ) {
   setBackground( HeroImage );
 
   return (
-    <>
+    <ServicoSection>
       <ServicoConteudoDireito />
       <ServicoConteudoEsquerdo />
       <ServicoConteudoDireito />
       <ServicoConteudoEsquerdo />
       <ServicoConteudoDireito />
       <CtaContact />
-    </>
+    </ServicoSection>
   );
 }
