@@ -2,3 +2,11 @@
 front/node_modules/
 .vscode/
 front/build/
+back/cdn
+back/*.php
+back/wp-admin
+back/wp-includes
+back/wp-content/*.php
+back/wp-content/plugins
+back/wp-content/themes/*.php
+back/wp-content/themes/twentytwentythree
