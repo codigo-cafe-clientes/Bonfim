@@ -12,6 +12,7 @@ export const HeroSection = styled.section`
     width: 100%;
     h1 {
       font-size: ${ props => props.theme.main.headingOne }px;
+      color: #fff;      
     }
   }
 `;

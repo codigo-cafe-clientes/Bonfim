@@ -1,16 +1,19 @@
 import { HomeConsultaSection } from "./style";
 import {ScrollRestoration} from "react-router-dom";
+import ConteudoConsulta from "view/Home/Consulta/ConteudoConsulta"
+
+import consult from 'assets/images/consult.png';
 
 export default function HomeConsulta() {
   return (
-    <HomeConsultaSection>
-      <div>Consulta</div>
-      <div>Facilitador contabil</div>
-      <div>Pessoa Juridica</div>
-      <div>Pessoa Física</div>
-
-      {/*<ScrollRestoration />*/}
-
+    <HomeConsultaSection>                  
+      <div>
+        <h1>Consulta</h1>
+      <p>Links úteis para consulta, aproveite!</p>
+      </div>
+      <ConteudoConsulta />
+      <ConteudoConsulta />
+      <ConteudoConsulta />
     </HomeConsultaSection>
   );
 }
