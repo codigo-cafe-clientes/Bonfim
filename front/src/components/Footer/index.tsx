@@ -22,14 +22,14 @@ export default function Footer() {
         
         <menu>
           <nav>
-              <h3>Empresa</h3>
             <ul>
+              <li><h3>Empresa</h3></li>
               <li><Link to="/empresa-bonfim-contabilidade">Sobre</Link></li>
             </ul>
           </nav>
-          <nav>
-              <h3>Serviços</h3>
+          <nav>              
             <ul>
+              <li><h3>Serviços</h3></li>
               <li><Link to="/servicos" >Abertura de empresa</Link></li>
               <li><Link to="/servicos" >Contabilidade</Link></li>
               <li><Link to="/servicos" >Departamento Fiscal</Link></li>
@@ -38,16 +38,16 @@ export default function Footer() {
             </ul>
           </nav>
           <nav>
-              <h3>Consulta</h3>
             <ul>
+              <li><h3>Consulta</h3></li>              
               <li><Link to="/">Facilitador Contábil</Link></li>
               <li><Link to="/">Pessoa Física</Link></li>
               <li><Link to="/">Pessoa Jurídica</Link></li>
             </ul>
           </nav>
-          <nav>
-              <h3>Siga-nos</h3>
+          <nav>              
             <ul>
+              <li><h3>Siga-nos</h3></li>
               <li>
                 <a href="#"><img src={ Linkedin } alt="Linkedin"/></a>
                 <a href="#"><img src={ Instagram } alt="Instragram"/></a>

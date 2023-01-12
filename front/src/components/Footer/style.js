@@ -89,8 +89,6 @@ export const MainFooter = styled.footer`
       li {
         padding-bottom: 5px;
       }
-      
-      
     }
   }
   
