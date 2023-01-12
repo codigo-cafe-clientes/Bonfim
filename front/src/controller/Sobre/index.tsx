@@ -39,10 +39,7 @@ export default function Sobre( { setTitle, setBackground }:Props ) {
       </GlideJS>
 
       <SobreConteudo />
-      <SobreConteudo />
-      <SobreConteudo />
-      <SobreConteudo />
-      <SobreConteudo />
+      
       <CtaContact />
     </>
   );
