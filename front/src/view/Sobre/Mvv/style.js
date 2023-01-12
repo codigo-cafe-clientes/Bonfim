@@ -15,10 +15,13 @@ export const SobreMvvSection = styled.section`
     font-size: ${ props => props.theme.main.fontLarge }px;
     color: ${ props => props.theme.main.colorBlue };
     text-align: center;
-}
-
-p {
-    line-height: 1.7rem
-    color: ${ props => props.theme.main.colorBlack };
   }
+
+  p {
+      margin-top: 10px;
+      font-size: 1.25rem;
+      line-height: 1.7rem;
+      color: ${ props => props.theme.main.colorBlack };
+    }
+
 `;

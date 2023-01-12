@@ -2,10 +2,12 @@ import { Formik } from "formik";
 
 import { ContatoFormularioSection } from "./style";
 
+import { theme } from "components/Layout/theme";
+
 
 export default function ContatoFormulario() {
   return (
-    <ContatoFormularioSection>
+    <ContatoFormularioSection theme = {theme}>
       <Formik
         initialValues={{
           'nome': '',
@@ -38,6 +40,7 @@ export default function ContatoFormulario() {
             <label>Mensagem</label>
             <textarea placeholder="Deixe seu mensagem" name="mensagem" onChange={handleChange} onBlur={handleBlur} >{values.mensagem}</textarea>
             <button type="submit" disabled={isSubmitting}>Enviar</button>
+            <button type="submit" disabled={isSubmitting}>limpar Formulário</button>
           </form>
         )}
       </Formik>
