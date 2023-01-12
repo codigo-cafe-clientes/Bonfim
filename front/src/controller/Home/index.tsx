@@ -5,9 +5,17 @@ import HomeVideo from "view/Home/Video";
 import HomeConsulta from "view/Home/Consulta";
 import CtaContact from "components/CtaContact";
 
-import { mSobre, mCliente } from "model/Home";
+import { useState } from "react";
+
+import { mSobre } from "model/Home";
 
 export default function Home() {
+
+  const [ client, setClient ] = useState();
+  const [ about, setAbout ] = useState();
+  const [ video, setVideo ] = useState();
+  const [ consult, setConsult ] = useState();
+
   return (
     <>
       <Slider />
@@ -17,7 +25,7 @@ export default function Home() {
         image={mSobre().image}
         alt={mSobre().alt}
       />
-      <HomeCliente data={mCliente()} />
+      <HomeCliente />
       <HomeVideo />
       <HomeConsulta />
       <CtaContact />
