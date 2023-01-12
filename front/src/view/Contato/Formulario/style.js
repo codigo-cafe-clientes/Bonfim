@@ -11,8 +11,7 @@ export const ContatoFormularioSection = styled.section`
     label {
       color: #3D3C3C;
       font-weight:600;
-      font-size: 1.125rem;
-      
+      font-size: 1.125rem;      
     }
     
     input {
@@ -32,7 +31,7 @@ export const ContatoFormularioSection = styled.section`
     textarea {
       padding: 12px 18px;
       width: 600px;
-      height: 400px      
+      height: 400px;      
     }
     
     button {
