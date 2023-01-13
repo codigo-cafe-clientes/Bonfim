@@ -2,9 +2,12 @@ import { Formik } from "formik";
 
 import { ContatoFormularioSection } from "./style";
 
+import { theme } from "components/Layout/theme";
+
+
 export default function ContatoFormulario() {
   return (
-    <ContatoFormularioSection>
+    <ContatoFormularioSection theme = {theme}>
       <Formik
         initialValues={{
           'nome': '',
@@ -29,14 +32,15 @@ export default function ContatoFormulario() {
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
           <form>
             <label>Nome</label>
-            <input type="text" name="nome" onChange={handleChange} onBlur={handleBlur} value={values.nome} />
+            <input type="text" placeholder="Nome" name="nome" onChange={handleChange} onBlur={handleBlur} value={values.nome} />
             <label>E-mail</label>
-            <input type="email" name="email" onChange={handleChange} onBlur={handleBlur} value={values.email} />
+            <input type="email" placeholder="E-mail" name="email" onChange={handleChange} onBlur={handleBlur} value={values.email} />
             <label>Assunto</label>
-            <input type="text" name="assunto" onChange={handleChange} onBlur={handleBlur} value={values.assunto} />
+            <input type="text" placeholder="Assunto" name="assunto" onChange={handleChange} onBlur={handleBlur} value={values.assunto} />
             <label>Mensagem</label>
-            <textarea name="mensagem" onChange={handleChange} onBlur={handleBlur} >{values.mensagem}</textarea>
+            <textarea placeholder="Deixe seu mensagem" name="mensagem" onChange={handleChange} onBlur={handleBlur} >{values.mensagem}</textarea>
             <button type="submit" disabled={isSubmitting}>Enviar</button>
+            <button type="submit" disabled={isSubmitting}>limpar Formulário</button>
           </form>
         )}
       </Formik>

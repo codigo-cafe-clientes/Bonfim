@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const SobreConteudoPrincipalSection = styled.section`
   width: 100%;
   display: flex;
+  
+  line-height: 1.7rem;
+  
   img {
     max-width: 478px;
     width: 100%;

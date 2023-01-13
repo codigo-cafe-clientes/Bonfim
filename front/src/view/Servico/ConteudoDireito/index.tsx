@@ -1,9 +1,12 @@
 import { ServicoConteudoDireitoSection } from "./style"
+import { theme } from "components/Layout/theme"
+import { Link } from "react-router-dom";
+
 
 
 export default function ServicoConteudoDireito() {
   return (
-    <ServicoConteudoDireitoSection >
+    <ServicoConteudoDireitoSection theme = {theme}>
       <div>
         <img src="https://via.placeholder.com/274" alt="" />
       </div>
@@ -19,7 +22,10 @@ export default function ServicoConteudoDireito() {
         Empresa dele quando o seu faturamento ultrapassar o limite do Empreendedor Individual.
         Grande parte das pequenas empresas ainda enxerga uma empresa de contabilidade como um custo, quando na verdade é um investimento. O profissional contábil está preparado para ajuda-lo de forma global. Pensando que a legislação obriga que a escrituração contábil deva ser realizada por um profissional devidamente habilílado perante o Conselho Regional de Contabilidade, a empresa precisa contratar profissionais capacitados para realização dessas tarefas. Fica sem dúvida mais barato contratar um bom escritório de contabilidade para auxiliá-lo nesses processos.
         </p>
-        <button>orçamento</button>
+      
+      <Link to="/contato">Orçamento</Link>
+{/* fazer a troca */}
+      <button>orçamento</button>
       </div>
     </ServicoConteudoDireitoSection>
   );
