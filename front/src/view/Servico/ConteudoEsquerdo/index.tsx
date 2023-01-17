@@ -1,16 +1,20 @@
-import { ServicoConteudoEsquerdoSection } from "./style";
-import { theme } from "components/Layout/theme"
+import { Link } from "react-router-dom"
+import DOMPurify from 'dompurify'
 
-export default function ServicoConteudoEsquerdo() {
+import { ServicoConteudoEsquerdoSection } from "./style"
+import { theme } from "components/Layout/theme"
+import { iServico } from "interfaces/interfaceServico"
+
+export default function ServicoConteudoEsquerdo( {id,name,excerpt,content,image,background}:iServico ) {
   return (
     <ServicoConteudoEsquerdoSection theme = {theme}>
       <div>
-        <img src="https://via.placeholder.com/274" alt="" />
+        <img src={image} alt={name} />
       </div>
       <div>
-        <h2>Contabilidade</h2>
-        <p>Executamos todos os serviços e procedimentos contábeis, incluindo total suporte contábil para a tomada de decisões. Provemos controles patrimoniais. balanços, balancetes, demonstrativos financeiros, escrituração de livros (diário, razão, lalur, etc), conciliações contábeis e SPED contábil.</p>
-        <button>orçamento</button>
+        <h2 dangerouslySetInnerHTML={{__html: DOMPurify.sanitize( name )}}></h2>
+        <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize( content )}}></div>
+        <Link to="/contato">Orçamento</Link>
       </div>
     </ServicoConteudoEsquerdoSection>
   );

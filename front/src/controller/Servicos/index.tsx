@@ -1,12 +1,10 @@
-import ServicoConteudoDireito from "view/Servico/ConteudoDireito";
-import ServicoConteudoEsquerdo from "view/Servico/ConteudoEsquerdo";
-import CtaContact from "components/CtaContact";
-
+import { useEffect, useState } from "react"
+import ServicoConteudoDireito from "view/Servico/ConteudoDireito"
+import ServicoConteudoEsquerdo from "view/Servico/ConteudoEsquerdo"
+import CtaContact from "components/CtaContact"
+import { iServico } from "interfaces/interfaceServico"
 import { ServicoSection } from "./style"
-
-
-
-import HeroImage from 'assets/images/banner-default.png';
+import HeroImage from 'assets/images/banner-default.png'
 
 interface Props {
   setTitle : React.Dispatch<React.SetStateAction<string | undefined>>,
@@ -15,16 +13,47 @@ interface Props {
 
 export default function Servicos( { setTitle, setBackground }:Props ) {
 
-  setTitle( 'Serviços' );
-  setBackground( HeroImage );
+  const [ services, setServices ] = useState([])
+  useEffect(() => {
+    fetch('https://panel.contabilidadebonfim.com.br/wp-json/bc/v1/services')
+    .then(response => {
+      return response.json()
+    })
+    .then(body => {
+      setServices( body )
+    })
+  },[])
+
+  setTitle( 'Serviços' )
+  setBackground( HeroImage )
 
   return (
     <ServicoSection>
-      <ServicoConteudoDireito />
-      <ServicoConteudoEsquerdo />
-      <ServicoConteudoDireito />
-      <ServicoConteudoEsquerdo />
-      <ServicoConteudoDireito />
+      { services.map((service:iServico, index) => {
+        return ( index % 2 === 0 ) ?
+          <ServicoConteudoDireito
+            id={service.id}
+            name={service.name}
+            excerpt=""
+            content={service.content}
+            image={service.image}
+            background=""
+          />
+        :
+          <ServicoConteudoEsquerdo
+            id={service.id}
+            name={service.name}
+            excerpt=""
+            content={service.content}
+            image={service.image}
+            background=""
+          />
+      }) }
+      
+      {/* <ServicoConteudoEsquerdo /> */}
+      {/* <ServicoConteudoDireito /> */}
+      {/* <ServicoConteudoEsquerdo /> */}
+      {/* <ServicoConteudoDireito /> */}
       <CtaContact />
     </ServicoSection>
   );
