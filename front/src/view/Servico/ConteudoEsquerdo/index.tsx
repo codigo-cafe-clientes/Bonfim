@@ -13,7 +13,7 @@ export default function ServicoConteudoEsquerdo( {id,name,excerpt,content,image,
       </div>
       <div>
         <h2 dangerouslySetInnerHTML={{__html: DOMPurify.sanitize( name )}}></h2>
-        <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize( content )}}></div>
+        <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize( content ?? '' )}}></div>
         <Link to="/contato">Orçamento</Link>
       </div>
     </ServicoConteudoEsquerdoSection>
