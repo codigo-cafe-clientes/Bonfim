@@ -49,11 +49,6 @@ export default function Servicos( { setTitle, setBackground }:Props ) {
             background=""
           />
       }) }
-      
-      {/* <ServicoConteudoEsquerdo /> */}
-      {/* <ServicoConteudoDireito /> */}
-      {/* <ServicoConteudoEsquerdo /> */}
-      {/* <ServicoConteudoDireito /> */}
       <CtaContact />
     </ServicoSection>
   );
