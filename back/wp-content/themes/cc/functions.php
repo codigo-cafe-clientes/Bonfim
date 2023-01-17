@@ -16,6 +16,7 @@
 			'labels' => $labels,
 			'public' => true,
 			'hierarchical' => false,
+			'rest_namespace' => 'cb/v1',
 			'rest_base' => 'services',
 			'show_in_rest' => true,
 			'menu_icon' => 'dashicons-hammer',
@@ -74,6 +75,34 @@
 						$client['name'] = get_the_title();
 						$client['image'] = change_media_uri( get_the_post_thumbnail_url( get_the_ID(), 'full' ) );
 						$datas[] = $client;
+					}
+				}
+				return $datas;
+			}
+		]);
+	}
+
+	add_action( 'rest_api_init', 'create_endpoint_services' );
+	function create_endpoint_services () {
+		register_rest_route('bc/v1', '/services', [
+			'method' => 'GET',
+			'callback' => function( $data ) {
+				$datas = [];
+				$args = Array(
+					'post_type' => 'bc_service',
+					'posts_per_page' => -1
+				);
+				$services = new WP_Query( $args );
+				if ( $services->have_posts() ) {
+					while ( $services->have_posts() ) {
+						$services->the_post();
+						$service['id'] = get_the_ID();
+						$service['name'] = get_the_title();
+						$service['excerpt'] = get_the_excerpt();
+						$service['content'] = get_the_content();
+						$service['image'] = change_media_uri( get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' ) );
+						$service['background'] = change_media_uri( get_the_post_thumbnail_url( get_the_ID(), 'full' ) );
+						$datas[] = $service;
 					}
 				}
 				return $datas;
