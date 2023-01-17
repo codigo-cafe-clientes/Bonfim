@@ -34,7 +34,10 @@ export const ServicoConteudoEsquerdoSection = styled.section`
     color: ${ props => props.theme.main.colorBlack };
   }
   
-  button {
+  a {
+    display: inline-block;
+    text-decoration: none;
+
     margin-top: 40px;
     padding: 9px 24px;
 
