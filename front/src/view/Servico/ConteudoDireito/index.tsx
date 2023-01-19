@@ -24,8 +24,6 @@ export default function ServicoConteudoDireito() {
         </p>
       
       <Link to="/contato">Orçamento</Link>
-{/* fazer a troca */}
-      <button>orçamento</button>
       </div>
     </ServicoConteudoDireitoSection>
   );
