@@ -6,28 +6,32 @@ export const ContatoFormularioSection = styled.section`
     box-sizing: border-box;
     margin-top: 100px;
     margin-bottom: 50px;
-    
-    
+
+
     label {
       color: #3D3C3C;
       font-weight:600;
-      font-size: 1.125rem;      
+      font-size: 1.125rem;
+      padding: 15px 0 10px 0;
+      line-height: 2rem;
+      display: block;
+      box-sizing: border-box;
     }
     
+
+    input, textarea {
+      border: 2px solid #d9d9d9 !important;
+      border-radius: 5px;          
+      display:block; 
+    }
+
     input {
       padding: 12px 18px;
       font-weight:600;
       width: 600px;
-      height: 50px;            
-      margin-bottom: 34px;      
+      height: 50px;                
     }
 
-
-    input, textarea {
-      border: 1px solid #d9d9d9;
-      border-radius: 05px;      
-    }
-    
     textarea {
       padding: 12px 18px;
       width: 600px;
@@ -61,7 +65,7 @@ export const ContatoFormularioSection = styled.section`
       background-color: #f28841;      
     }
     
-    button:last-child {      
+    button[ type="reset" ] {      
       color: #E5803E;
       text-transform: capitalize;
       letter-spacing: .10rem;
@@ -69,7 +73,7 @@ export const ContatoFormularioSection = styled.section`
       background-color: #fff;      
     }
     
-    button:last-child:hover {
+    button[ type="reset" ]:hover {
       border-bottom: 2px solid #E5803E;      
     }
 
