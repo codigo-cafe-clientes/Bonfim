@@ -40,7 +40,7 @@ export default function ContatoFormulario() {
             <label>Mensagem</label>
             <textarea placeholder="Deixe seu mensagem" name="mensagem" onChange={handleChange} onBlur={handleBlur} >{values.mensagem}</textarea>
             <button type="submit" disabled={isSubmitting}>Enviar</button>
-            <button type="submit" disabled={isSubmitting}>limpar Formulário</button>
+            <button type="reset">limpar Formulário</button>
           </form>
         )}
       </Formik>
