@@ -40,7 +40,6 @@ export default function Home() {
 
   return (
     <>
-
       <Slider>
         <ul>
           {services.map(item => (
@@ -56,7 +55,7 @@ export default function Home() {
 
       <HomeVideo data={homepage}/>
 
-      <HomeConsulta />
+      <HomeConsulta data={homepage} />
       <CtaContact />
     </>
   );

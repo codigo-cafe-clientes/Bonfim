@@ -1,19 +1,19 @@
 import { HomeConsultaSection } from "./style";
-import {ScrollRestoration} from "react-router-dom";
 import ConteudoConsulta from "view/Home/Consulta/ConteudoConsulta"
+import { FaSearch } from "react-icons/fa"
 
-import consult from 'assets/images/consult.png';
-
-export default function HomeConsulta() {
+export default function HomeConsulta( props:any ) {
   return (
     <HomeConsultaSection>                  
       <div>
-        <h1>Consulta</h1>
-      <p>Links úteis para consulta, aproveite!</p>
+        <h1><FaSearch /> {props?.data?.consult.title}</h1>
+        <p>{props?.data?.consult.text}</p>
       </div>
-      <ConteudoConsulta />
-      <ConteudoConsulta />
-      <ConteudoConsulta />
+
+      {props?.data?.consults.map((item:any) => {
+        return ( <ConteudoConsulta data={item} /> )
+      })}
+      
     </HomeConsultaSection>
   );
 }
