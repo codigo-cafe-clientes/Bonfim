@@ -8,5 +8,6 @@ export const HomeVideoSection = styled.section`
     display: block;
     aspect-ratio: 16/9;
     max-width: 100%;
+    cursor: pointer;
   }
 `;
