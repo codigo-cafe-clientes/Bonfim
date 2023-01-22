@@ -15,8 +15,10 @@ export default function Home() {
 
   const [ services, setServices] = useState<iServico[] | []> ([])
   const [ currentService, setCurrentService ] = useState<iServico> ()
+  const [ homepage, setHomePage ] = useState ()
 
   useEffect(() => {
+    // Services
     fetch('https://panel.contabilidadebonfim.com.br/wp-json/bc/v1/services')
     .then(response => {
       return response.json()
@@ -25,11 +27,19 @@ export default function Home() {
       setServices( body )
       setCurrentService( body[0] )
     })
+    // Page Home
+    fetch('https://panel.contabilidadebonfim.com.br/wp-json/bc/v1/page/home')
+    .then(response => {
+      return response.json()
+    })
+    .then(body => {
+      setHomePage( body )
+      console.log( body )
+    })
   }, [])
 
   return (
     <>
-
       <Slider>
         <ul>
           {services.map(item => (
@@ -39,16 +49,13 @@ export default function Home() {
         <SliderItem current={currentService} />
       </Slider>
 
-      <HomeSobre
-        title={mSobre().title}
-        content={mSobre().content}
-        image={mSobre().image}
-        alt={mSobre().alt}
-      />
+      <HomeSobre data={homepage}/>
 
       <HomeCliente />
-      <HomeVideo />
-      <HomeConsulta />
+
+      <HomeVideo data={homepage}/>
+
+      <HomeConsulta data={homepage} />
       <CtaContact />
     </>
   );
