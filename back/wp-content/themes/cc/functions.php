@@ -135,6 +135,10 @@
 
 						$pages['video']['image'] = change_media_uri( get_field('home_video_image') );
 						$pages['video']['embed'] = get_field('home_video_embed');
+
+						$pages['consult']['title'] = get_field('home_consult_title');
+						$pages['consult']['text'] = get_field('home_consult_text');
+						$pages['consults'] = get_field('home_consult');
 					}
 				}
 				return $pages;
